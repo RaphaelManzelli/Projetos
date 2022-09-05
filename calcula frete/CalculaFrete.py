@@ -4,6 +4,7 @@ from cProfile import label
 from cgitb import text
 from distutils.command.build import build
 from msilib.schema import Font
+
 from shutil import copy2
 from string import whitespace
 from textwrap import fill
@@ -33,14 +34,14 @@ def entrar():
     ###Confidurando tela principal
 
     #
-    texto_distancia=Label(frame_principal, text='Distâcia percorrida:  ', bg='white', font= 'time, 11' ,padx=5 )
+    texto_distancia=Label(frame_principal, text='Distâcia percorrida em KM:  ', bg='white', font= 'time, 11' ,padx=5 )
     texto_distancia.grid(column=0, row=0)
     #
     ipt_distacia=Entry(frame_principal, border= '2', relief=RAISED )
     ipt_distacia.grid(column=1, row=0)
     #
-    texto_tempo=Label(frame_principal, text='Tempo aproximado:', bg='white', font= 'time, 11',  )
-    texto_tempo.grid(column=2, row=0)
+    texto_tempo=Label(frame_principal, text='Tempo aproximado em Minutos:', bg='white', font= 'time, 11',  )
+    texto_tempo.grid(column=2, row=0, padx=11)
     #
     ipt_tempo=Entry(frame_principal, border= '2', relief=RAISED )
     ipt_tempo.grid(column=3, row=0)
@@ -78,12 +79,17 @@ def entrar():
     ipt_hora=Entry(frame_principal, border=2, relief=RAISED)
     ipt_hora.grid(column=1, row=4)
     #
-    texto_porcentagem=Label(frame_principal, text='Ganho pelo combustível', bg='white', font='time, 11')
+    texto_porcentagem=Label(frame_principal, text='Ganho pelo combustível  %', bg='white', font='time, 11')
     texto_porcentagem.grid(column=2, row=4)
     #
     ipt_porcentagem=Entry(frame_principal, border=2, relief=RAISED)
     ipt_porcentagem.grid(column=3, row=4)
     #
+    bt_calcular=Button(frame_principal, text='CALCULAR', bg='gray', relief=RAISED, width=25,  )
+    bt_calcular.grid(column=0, row=5, pady=75)
+    #
+    bt_limpar=Button(frame_principal, text='LIMPAR', bg='gray', relief=RAISED, width=25,command=entrar  )
+    bt_limpar.grid(column=3, row=5, pady=75)
 
 
 
