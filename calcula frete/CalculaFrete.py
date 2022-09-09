@@ -4,7 +4,7 @@ from cProfile import label
 from cgitb import text
 from distutils.command.build import build
 from msilib.schema import Font
-
+from tkinter import	messagebox
 from shutil import copy2
 from string import whitespace
 from textwrap import fill
@@ -15,14 +15,20 @@ from tkinter.tix import COLUMN
 from turtle import width
 
 from pkg_resources import working_set
+#####################################################################################################################################
 
 
-    ###############################################################################################
+
+
+
     ### Apagar frame da pg boa vindas
 
 def apagar():
     frame_baixo.destroy()
    
+ 
+
+
 ###Criar tela principal
 
 def entrar():
@@ -31,6 +37,7 @@ def entrar():
     ###Apagando frame
     apagar()
     
+
     ###Confidurando tela principal
 
     #
@@ -85,17 +92,14 @@ def entrar():
     ipt_porcentagem=Entry(frame_principal, border=2, relief=RAISED)
     ipt_porcentagem.grid(column=3, row=4)
     #
-    bt_calcular=Button(frame_principal, text='CALCULAR', bg='gray', relief=RAISED, width=25,  )
-    bt_calcular.grid(column=0, row=5, pady=75)
+    bt_calcular=Button(frame_principal, text='CALCULAR', bg='gray', relief=RAISED, width=25, command= calculos  )
+    bt_calcular.grid(column=0, row=6, pady=75)
     #
     bt_limpar=Button(frame_principal, text='LIMPAR', bg='gray', relief=RAISED, width=25,command=entrar  )
-    bt_limpar.grid(column=3, row=5, pady=75)
-
-
-
-
-
-
+    bt_limpar.grid(column=3, row=6, pady=75)
+    #
+    texto_calculos=Label(frame_principal,bg='white', font='time, 11'  )
+    texto_calculos.grid(column=2, row=5)
 
 
 
@@ -130,6 +134,10 @@ img_fundo.place(x=75, y=50)
  
 bt_abertura= Button(frame_baixo, width=15, height=2, text='ENTRAR',command=  entrar,   background='white', relief=RAISED )
 bt_abertura.place(x=350, y= 390)
+
+
+
+
 ######################
 tl_abertura.mainloop()
 #FIM#
