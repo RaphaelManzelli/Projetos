@@ -38,13 +38,20 @@ def entrar():
     apagar()
     
 
+    def calculos():
+        pr = ipt_preco.get()
+        km = ipt_km.get()
+        total = float(pr) / float(km)
+
+        texto_calculos['text'] = (total)
+      
     ###Confidurando tela principal
 
     #
     texto_distancia=Label(frame_principal, text='Distâcia percorrida em KM:  ', bg='white', font= 'time, 11' ,padx=5 )
     texto_distancia.grid(column=0, row=0)
     #
-    ipt_distacia=Entry(frame_principal, border= '2', relief=RAISED )
+    ipt_distacia=Entry(frame_principal, border= '2',   relief=RAISED )
     ipt_distacia.grid(column=1, row=0)
     #
     texto_tempo=Label(frame_principal, text='Tempo aproximado em Minutos:', bg='white', font= 'time, 11',  )
@@ -71,13 +78,13 @@ def entrar():
     texto_preco=Label(frame_principal, text='Preço por L:  R$', font='time, 11', bg='white',pady=15  )
     texto_preco.grid(column=0 , row=3) 
     #
-    ipt_preco=Entry(frame_principal, border=2, relief=RAISED)
+    pr = ipt_preco=Entry(frame_principal, border=2, relief=RAISED)
     ipt_preco.grid(column=1, row=3)
     #
     texto_km=Label(frame_principal, text='KM/L:', bg='white', font='time, 11')
     texto_km.grid(column=2, row=3)
     #
-    ipt_km=Entry(frame_principal, border=2, relief= RAISED )
+    km =ipt_km=Entry(frame_principal, border=2, relief= RAISED )
     ipt_km.grid(column=3, row=3)
     #
     texto_hora=Label(frame_principal, text='Valor por H: R$', bg='white', font='time, 11',  )
@@ -98,7 +105,7 @@ def entrar():
     bt_limpar=Button(frame_principal, text='LIMPAR', bg='gray', relief=RAISED, width=25,command=entrar  )
     bt_limpar.grid(column=3, row=6, pady=75)
     #
-    texto_calculos=Label(frame_principal,bg='white', font='time, 11'  )
+    texto_calculos=Label(frame_principal,bg='white', font='time, 11', text=''  )
     texto_calculos.grid(column=2, row=5)
 
 
